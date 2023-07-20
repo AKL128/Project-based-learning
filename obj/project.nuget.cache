@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fMzxEYPAzRp8n91G1za0cUHSbUjntsDLEqKoQQnKiYpZ+9eNXWoik46U4BEfcK+hk7T5vuy3pS5OGKftYeA14w==",
+  "dgSpecHash": "u5P0VxFa26qdmgPJCcfRHyPQD9lshh0iVvpPUmK+l34PKrlNOtD95yfEXmJlEV3s99/lb5Wj4eyOwD0sp7H5cA==",
   "success": true,
   "projectFilePath": "/home/akl/vinalnd/Project-based-learning/project.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/akl/.nuget/packages/system.commandline/2.0.0-beta4.22272.1/system.commandline.2.0.0-beta4.22272.1.nupkg.sha512"
+  ],
   "logs": []
 }
