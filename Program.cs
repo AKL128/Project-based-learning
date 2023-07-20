@@ -17,6 +17,38 @@ namespace mathApp
             }
         }
         
+        while (true)
+        {
+            if (args.Length < 2)
+            {
+                Console.Write("Enter an integer: ");
+                input = Console.ReadLine();
+            
+                if (string.IsNullOrEmpty(input))
+                {
+                    break;
+                }
+                if (int.TryParse(input, out int number))
+                {
+                    numberList.Add(number);
+                }
+                else 
+                {
+                Console.WriteLine("Invalid input! Please enter a valid ineger.");
+                }
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        foreach (int number in numberList) {
+            Console.WriteLine(number);
+        }
+            
+
+
 
 
         }

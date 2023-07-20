@@ -1,0 +1,15 @@
+/home/akl/vinalnd/project/obj/Debug/net7.0/project.csproj.AssemblyReference.cache
+/home/akl/vinalnd/project/obj/Debug/net7.0/project.GeneratedMSBuildEditorConfig.editorconfig
+/home/akl/vinalnd/project/obj/Debug/net7.0/project.AssemblyInfoInputs.cache
+/home/akl/vinalnd/project/obj/Debug/net7.0/project.AssemblyInfo.cs
+/home/akl/vinalnd/project/obj/Debug/net7.0/project.csproj.CoreCompileInputs.cache
+/home/akl/vinalnd/project/bin/Debug/net7.0/project
+/home/akl/vinalnd/project/bin/Debug/net7.0/project.deps.json
+/home/akl/vinalnd/project/bin/Debug/net7.0/project.runtimeconfig.json
+/home/akl/vinalnd/project/bin/Debug/net7.0/project.dll
+/home/akl/vinalnd/project/bin/Debug/net7.0/project.pdb
+/home/akl/vinalnd/project/obj/Debug/net7.0/project.dll
+/home/akl/vinalnd/project/obj/Debug/net7.0/refint/project.dll
+/home/akl/vinalnd/project/obj/Debug/net7.0/project.pdb
+/home/akl/vinalnd/project/obj/Debug/net7.0/project.genruntimeconfig.cache
+/home/akl/vinalnd/project/obj/Debug/net7.0/ref/project.dll
