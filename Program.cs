@@ -49,9 +49,26 @@ namespace mathApp
             }
         }
 
+        int maxNumber = numberList.Max();
+        int maxOccurrence = 0;
+
+        int minNumber = numberList.Min();
+        int minOccurrence = 0;
+
         foreach (int number in numberList) {
-            Console.WriteLine(number);
+            
+            if (maxNumber == number)
+            {
+                maxOccurrence += 1;
+            }
+            if (minNumber == number)
+            {
+                minOccurrence += 1;
+            }
+            
         }
+        Console.WriteLine($"Max Occurrences: {maxOccurrence}");
+        Console.WriteLine($"Min Occurrences: {minOccurrence}");
 
 
             
