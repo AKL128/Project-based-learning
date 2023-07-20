@@ -1,18 +1,44 @@
 ﻿using System;
 using System.Collections;
 using System.CommandLine;
+using System.CommandLine.Parsing;
+using System.CommandLine.Builder;
+using System.CommandLine.Help;
 
 namespace mathApp
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
+
+        var intArgument = new Argument<int>
+            ();
+
+
+
+
+        var cmd = new RootCommand(@"This is a program that calculates the 
+average, mean, median, maximum and minimum 
+of a set of values given at the command line
+or from one entry at a time followed by an enter key.")
+        {
+
+        };
+
+        cmd.Add(intArgument);
+       
+        await cmd.InvokeAsync(args[0]);
+
+        if (args[0].Equals("-h")) {
+                System.Environment.Exit(0);
+            }
         string input;
         List<int> numberList = new List<int>();
 
         foreach (string arg in args)
         {
+            
             if (int.TryParse(arg, out int number) == false) {
                 Console.WriteLine($"{arg} is not a valid integer.");
                 Console.WriteLine("Program terminated");
