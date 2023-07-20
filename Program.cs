@@ -11,10 +11,16 @@ namespace mathApp
 
         foreach (string arg in args)
         {
-            if (int.TryParse(arg, out int number))
+            if (int.TryParse(arg, out int number) == false) {
+                Console.WriteLine($"{arg} is not a valid integer.");
+                Console.WriteLine("Program terminated");
+                System.Environment.Exit(1);
+            }
+            else 
             {
                 numberList.Add(number);
             }
+                
         }
         
         while (true)
@@ -46,6 +52,8 @@ namespace mathApp
         foreach (int number in numberList) {
             Console.WriteLine(number);
         }
+
+
             
 
 

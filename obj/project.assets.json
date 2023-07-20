@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/akl/vinalnd/project/project.csproj",
+      "projectUniqueName": "/home/akl/vinalnd/Project-based-learning/project.csproj",
       "projectName": "project",
-      "projectPath": "/home/akl/vinalnd/project/project.csproj",
+      "projectPath": "/home/akl/vinalnd/Project-based-learning/project.csproj",
       "packagesPath": "/home/akl/.nuget/packages/",
-      "outputPath": "/home/akl/vinalnd/project/obj/",
+      "outputPath": "/home/akl/vinalnd/Project-based-learning/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/akl/.nuget/NuGet/NuGet.Config"
