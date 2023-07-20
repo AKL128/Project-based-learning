@@ -54,7 +54,7 @@ namespace mathApp
 
         int minNumber = numberList.Min();
         int minOccurrence = 0;
-
+        int total = 0;
         foreach (int number in numberList) {
             
             if (maxNumber == number)
@@ -65,13 +65,25 @@ namespace mathApp
             {
                 minOccurrence += 1;
             }
+
+            total += number;
             
         }
-        Console.WriteLine($"Max Occurrences: {maxOccurrence}");
-        Console.WriteLine($"Min Occurrences: {minOccurrence}");
+
+        
+        Console.WriteLine($"Max: {maxNumber} ({maxOccurrence})");
+        Console.WriteLine($"Min: {minNumber} ({minOccurrence})");
+
+        decimal averageLibrary = (decimal)numberList.Average();
+        Console.WriteLine($"Average using Library: {averageLibrary}");
+        
+        decimal average = (decimal)total / numberList.Count;
+        Console.WriteLine($"Average Manual: {average}");
 
 
-            
+
+
+        
 
 
 
