@@ -70,15 +70,34 @@ namespace mathApp
             
         }
 
-        
-        Console.WriteLine($"Max: {maxNumber} ({maxOccurrence})");
-        Console.WriteLine($"Min: {minNumber} ({minOccurrence})");
+        static decimal getMedian(List<int> medianList) 
+        {
+            int totalNumbers = medianList.Count;
+            medianList.Sort();
+
+            if (totalNumbers % 2 == 0)
+            {
+                int index1 = (totalNumbers / 2) - 1;
+                int index2 = (totalNumbers / 2);
+                return (medianList[index1] + medianList[index2]) / 2.0m;
+            }
+            else
+            {
+                return medianList[totalNumbers / 2];
+            }
+        }
+
 
         decimal averageLibrary = (decimal)numberList.Average();
         Console.WriteLine($"Average using Library: {averageLibrary}");
-        
+
         decimal average = (decimal)total / numberList.Count;
         Console.WriteLine($"Average Manual: {average}");
+        Console.WriteLine($"Median: {getMedian(numberList)}");
+        Console.WriteLine($"Max: {maxNumber} ({maxOccurrence})");
+        Console.WriteLine($"Min: {minNumber} ({minOccurrence})");
+
+        
 
 
 
