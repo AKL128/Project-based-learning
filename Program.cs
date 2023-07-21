@@ -12,8 +12,7 @@ namespace mathApp
         public static async Task Main(string[] args)
         {
 
-        var intArgument = new Argument<int>
-            ();
+        var intArgument = new Argument<int>();
 
 
 
