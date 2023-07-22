@@ -18,7 +18,7 @@ namespace mathApp
 
 
         var cmd = new RootCommand(@"This is a program that calculates the 
-average, mean, median, maximum and minimum 
+average, median, maximum and minimum 
 of a set of values given at the command line
 or from one entry at a time followed by an enter key.")
         {
@@ -26,29 +26,34 @@ or from one entry at a time followed by an enter key.")
         };
 
         cmd.Add(intArgument);
-       
-        await cmd.InvokeAsync(args[0]);
 
-        if (args[0].Equals("-h")) {
-                System.Environment.Exit(0);
-            }
+        
+
+
         string input;
         List<int> numberList = new List<int>();
 
-        foreach (string arg in args)
-        {
-            
-            if (int.TryParse(arg, out int number) == false) {
-                Console.WriteLine($"{arg} is not a valid integer.");
-                Console.WriteLine("Program terminated");
-                System.Environment.Exit(1);
-            }
-            else 
+
+        if (args.Length != 0) {
+            foreach (string arg in args)
             {
-                numberList.Add(number);
+                if (args[0].Equals("-h")) 
+                {
+                    await cmd.InvokeAsync(args);
+                    System.Environment.Exit(0);
+                }
+                if (int.TryParse(arg, out int number) == false) {
+                    Console.WriteLine($"{arg} is not a valid integer.");
+                    Console.WriteLine("Program terminated");
+                    System.Environment.Exit(1);
+                }
+                else 
+                {
+                    numberList.Add(number);
+                }
             }
-                
         }
+        
         
         while (true)
         {
@@ -123,13 +128,6 @@ or from one entry at a time followed by an enter key.")
         Console.WriteLine($"Median: {getMedian(numberList)}");
         Console.WriteLine($"Max: {maxNumber} ({maxOccurrence})");
         Console.WriteLine($"Min: {minNumber} ({minOccurrence})");
-
-        
-
-
-
-
-        
 
 
 
