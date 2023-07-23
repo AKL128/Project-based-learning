@@ -81,6 +81,12 @@ or from one entry at a time followed by an enter key.")
             }
         }
 
+        if (numberList.Count == 0) {
+            Console.WriteLine("No numbers added.");
+            Console.WriteLine("Program terminated");
+            System.Environment.Exit(1);
+        }
+
         int maxNumber = numberList.Max();
         int maxOccurrence = 0;
 
