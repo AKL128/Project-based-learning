@@ -35,6 +35,9 @@ or from one entry at a time followed by an enter key.")
             string? input;
             List<int> numberList = new List<int>();
 
+            bool fileOption = false;
+            string csvPath = "";
+
 
             if (args.Length == 0)
             {
@@ -73,13 +76,18 @@ or from one entry at a time followed by an enter key.")
                         await cmd.InvokeAsync(args);
                         System.Environment.Exit(0);
                     }
-                    if (int.TryParse(arg, out int number) == false)
+                    if (int.TryParse(arg, out int number) == false && !File.Exists(arg))
                     {
-
-
                         Console.WriteLine($"{arg} is not a valid integer.");
                         Console.WriteLine("Program terminated");
                         System.Environment.Exit(1);
+                    }
+                    if (File.Exists(arg))
+                    {
+                        Console.WriteLine($"Parsing {arg}");
+                        csvPath = arg;
+                        fileOption = true;
+                        break;
                     }
                     else
                     {
@@ -87,6 +95,30 @@ or from one entry at a time followed by an enter key.")
                     }
                 }
             }
+
+            do
+            {
+                try
+                {
+                    
+                    string[] lines = File.ReadAllLines(csvPath);
+
+                    foreach (string line in lines)
+                    {
+                        string[] values = line.Split(',');
+                        if (values == null || values.Length == 0)
+                        {
+                            Console.WriteLine("Invalid data in CSV file.");
+                            System.Environment.Exit(2);
+                        }
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
+            } while (fileOption == true);
 
 
             if (numberList.Count == 0)
