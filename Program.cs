@@ -113,16 +113,17 @@ or from one entry at a time followed by an enter key.")
                         string[] values = line.Split(',');
                         for (int column = 0; column < values.Length; column)
                         {
-                            if (int.TryParse(input, out int number))
+                            if (int.TryParse(value[column], out int number))
                             {
-                                Console.WriteLine("number would add here");
+                                numberList.Add(number);
+                            }
+                            else
+                            {
+                                Console.WriteLine($"{value[column]} is an invalid input at line and column ({row}, {column})");
+                                System.Environment.Exit(1);
                             }
                         }
                     }
-
-                        
-
-
                 }
                 catch (Exception e)
                 {
