@@ -100,18 +100,28 @@ or from one entry at a time followed by an enter key.")
             {
                 try
                 {
-                    
+                    if (!csvPath.EndsWith(".csv"))
+                    {
+                        Console.WriteLine("File is not a CSV file. Only CSV files are accepted.");
+                        System.Environment.Exit(3);
+                    }
                     string[] lines = File.ReadAllLines(csvPath);
 
-                    foreach (string line in lines)
+                    for (int row = 0; row < lines.Length; rowNumber++)
                     {
+                        string line = lines[row];
                         string[] values = line.Split(',');
-                        if (values == null || values.Length == 0)
+                        for (int column = 0; column < values.Length; column)
                         {
-                            Console.WriteLine("Invalid data in CSV file.");
-                            System.Environment.Exit(2);
+                            if (int.TryParse(input, out int number))
+                            {
+                                Console.WriteLine("number would add here");
+                            }
                         }
                     }
+
+                        
+
 
                 }
                 catch (Exception e)
