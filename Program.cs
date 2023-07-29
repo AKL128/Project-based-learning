@@ -96,7 +96,7 @@ or from one entry at a time followed by an enter key.")
                 }
             }
 
-            do
+            while (fileOption == true)
             {
                 try
                 {
@@ -135,7 +135,7 @@ or from one entry at a time followed by an enter key.")
                 {
                     Console.WriteLine("Exception: " + e.Message);
                 }
-            } while (fileOption == true);
+            }
 
 
             if (numberList.Count == 0)
