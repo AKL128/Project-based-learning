@@ -107,23 +107,29 @@ or from one entry at a time followed by an enter key.")
                     }
                     string[] lines = File.ReadAllLines(csvPath);
 
-                    for (int row = 0; row < lines.Length; rowNumber++)
+                    for (int row = 0; row < lines.Length; row++)
                     {
                         string line = lines[row];
                         string[] values = line.Split(',');
-                        for (int column = 0; column < values.Length; column)
+                        for (int column = 0; column < values.Length; column++)
                         {
-                            if (int.TryParse(value[column], out int number))
+                            if (values[column] == "" || values[column].Contains(Environment.NewLine))
+                            {
+                                continue;
+                            }
+                            if (int.TryParse(values[column], out int number))
                             {
                                 numberList.Add(number);
                             }
                             else
                             {
-                                Console.WriteLine($"{value[column]} is an invalid input at line and column ({row}, {column})");
+                                Console.WriteLine($"{values[column]} is an invalid input at line and column ({row}, {column})");
                                 System.Environment.Exit(1);
                             }
                         }
                     }
+
+                    fileOption = false;
                 }
                 catch (Exception e)
                 {
