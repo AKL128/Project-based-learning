@@ -100,17 +100,14 @@ or from one entry at a time followed by an enter key.")
             {
                 try
                 {
-                    if (!csvPath.EndsWith(".csv"))
-                    {
-                        Console.WriteLine("File is not a CSV file. Only CSV files are accepted.");
-                        System.Environment.Exit(3);
-                    }
                     string[] lines = File.ReadAllLines(csvPath);
 
                     for (int row = 0; row < lines.Length; row++)
                     {
                         string line = lines[row];
                         string[] values = line.Split(',');
+                        int invalidIndex;
+                        char malformed = '\0';
                         for (int column = 0; column < values.Length; column++)
                         {
                             if (values[column] == "" || values[column].Contains(Environment.NewLine))
@@ -123,7 +120,16 @@ or from one entry at a time followed by an enter key.")
                             }
                             else
                             {
-                                Console.WriteLine($"{values[column]} is an invalid input at line and column ({row}, {column})");
+                                string malformedCell = values[column];
+                                for (int index = 0; index < malformedCell.Length; index++)
+                                {
+                                    if (!char.IsNumber(malformedCell[index]))
+                                    {
+                                        malformed = malformedCell[index];
+                                    }
+                                }
+                                invalidIndex = line.IndexOf(malformed);
+                                Console.WriteLine($"{malformed} is an invalid input at line and column ({row+1}, {invalidIndex+1})");
                                 System.Environment.Exit(1);
                             }
                         }
